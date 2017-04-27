@@ -1,3 +1,7 @@
+// TERMINAL ACTIONS:
+// Start with npm init
+// npm install gulp plug-ins required
+
 // All gulp packages must be named as it is in require()
 var gulp = require('gulp'),
 		uglify = require('gulp-uglify'),

@@ -2,16 +2,13 @@ $(function() {
 
 	$('#section-options').change(function(event) {
     event.preventDefault();
-		console.log('this worked');
 		
 		var chosenSection = $('#section-options option').filter(':selected').val();
-		console.log(chosenSection);
 
-		var url = "https://api.nytimes.com/svc/topstories/v2/" + chosenSection + ".json";
+		var url = 'https://api.nytimes.com/svc/topstories/v2/' + chosenSection + '.json';
 		url += '?' + $.param({
-			'api-key': "e44f8396e12a4c7c86f4a9cc6884330e"
+			'api-key': 'e44f8396e12a4c7c86f4a9cc6884330e'
 		});
-		console.log(url);
 		
 	// Header changes
 
@@ -26,11 +23,19 @@ $(function() {
 			url: url,
 		}).done(function(data) {
 			$.each(data.results, function(index, value) {
-
-				console.log(data);
-
-				// storiesList +=  '<img src="' + value.artworkUrl100 + '"/img>' + value.collectionName + '</li>'
+				for (var i = 0; i < 12; i++ ) {
+					if (value['multimedia']['url'] != '' ) {
+						storiesList += value.abstract;						
+					}
+				}
+				// '<img src="' + value.artworkUrl100 + '"/img>'
 			});
+			console.log(storiesList);
+			// $('.generated-stories').append(storiesList);
+		}).fail(function() {
+			$('.generated-stories').append('Sorry. Looks like something isn\'t working right!');
+		}).always(function() {
+			$('#loading-gif').remove();
 		});
 
 	});
