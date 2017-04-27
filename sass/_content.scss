@@ -1,18 +1,33 @@
 html {
 	font-family: 'open_sans';
 	font-size: 16px;
-	color: #ffffff;
+	color: $font-color;
 }
 
 body {
 	background-color: black;
 }
 
-.selection-area {
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.selection-area div {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 	text-align: center;
+}
+
+.dropdown-menu {
+	display: flex;
+	justify-content: center;
 }
 
 #section-options {
@@ -23,12 +38,37 @@ body {
 	height: 5rem;
 }
 
-.copyright {
-	color: #c2c2c2;
+// .main-content { //necessary?
+// 	display: flex;
+// 	justify-content: center;
+// }
+
+.generated-stories {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-@media all and (min-width: 600px) {
+.story {
+	width: 80%;
+	position: relative;
+	display: flex;
+	align-content: flex-end;
+	flex-direction: column-reverse;
+	list-style-type: none;
 
-/*Insert Code for tablet below*/
+	p {
+		width: 100%;
+		margin: 0;
+		padding: 0.5rem;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.5);
+		font-size: 0.9rem;
+	}
 
+	.story-image {
+		height: auto;
+		width: 100%;
+	}
 }
