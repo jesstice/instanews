@@ -2,20 +2,37 @@
 // Start with npm init
 // npm install gulp plug-ins required
 
-// All gulp packages must be named as it is in require()
+// All gulp packages must be named in require() as the plugin is named
 var gulp = require('gulp'),
 		uglify = require('gulp-uglify'),
 		rename = require('gulp-rename'),
 		browserSync = require('browser-sync'),
-		eslint = require('gulp-eslint');
+		eslint = require('gulp-eslint'),
+		sass = require('gulp-sass'),
+		autoprefixer = require('gulp-autoprefixer'),
+		cssnano = require('gulp-cssnano'),
+		prettyerror = require('gulp-prettyerror');
 
 // the default task runs the tasks listed in the array
 gulp.task('default', ['watch', 'browser-sync']);
 
+// compiles scss to css
+gulp.task('sass', function() {
+	gulp.src('./sass/style.scss')
+		// .pipe() is a node method (and general computing concept)	
+		.pipe(prettyerror())
+		.pipe(sass())
+		.pipe(autoprefixer({
+			browers: ['last 2 versions']
+		}))
+		.pipe(cssnano())
+		.pipe(rename('style.min.css'))
+		.pipe(gulp.dest('./build/css'))
+});
+
 // define task to uglify and move js files to build dir
 gulp.task('scripts', ['lint'], function() {
 	// *.js ensures that all the .js files are pulled
-	// .pipe() is a node method (and general computing concept)
 	gulp.src('./js/*.js')
 		.pipe(uglify())
 		// takes js files and renames
@@ -37,6 +54,7 @@ gulp.task('watch', function() {
 	// 1st argument: where we want to watch
 	// 2nd argument: what to do when things change
 	gulp.watch('./js/*.js', ['scripts']);
+	gulp.watch('./sass/*.scss', ['sass']);
 });
 
 // define task to refresh browser automatically
@@ -46,5 +64,5 @@ gulp.task('browser-sync', function() {
 			baseDir: './'
 		}
 	});
-	gulp.watch(['./build/js/*.js', './css/*.css']).on('change', browserSync.reload);
+	gulp.watch(['./build/js/*.js', './build/css/*.css']).on('change', browserSync.reload);
 });
