@@ -12,8 +12,9 @@ $(function () {
 
 		// Header changes
 
+
 		// Loading gif
-		$('.generated-stories').before('<img src="./assets/images/ajax-loader.gif" alt="loading" id="loading-gif">');
+		$('.loading-gif').append('<img src="./assets/images/ajax-loader.gif" alt="loading" id="loading-gif">');
 
 		var storiesList = [];
 
@@ -23,10 +24,13 @@ $(function () {
 			url: url,
 		}).done(function (data) {
 			$.each(data.results, function (index, value) {
+				
 				if (value.multimedia.length !== 0) {
 					storiesList.push(
-						'<li class="story">' + '<img class="story-image" src="' + value.multimedia[4].url + '"/img>' + '<p>' + value.abstract + '</p>' + '</li>'
-					);
+						'<li class="story">' + '<a href="' + value.url + '" target="_blank">' + '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' +  '<p>' + value.abstract + '</p>' + '</div>' + '</a>' + '</li>');
+
+					// $('.image-container').css('background-image', 'url("https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg")');
+
 				}
 			});
 			var firstTwelve = storiesList.slice(0, 12).join('');
@@ -39,3 +43,5 @@ $(function () {
 
 	});
 });
+
+						// '<li class="story">' + '<div class="image-container">' + '<img class="story-image" src="' + value.multimedia[4].url + '"/>' + '</div>' + '<p>' + value.abstract + '</p>' + '</li>');
