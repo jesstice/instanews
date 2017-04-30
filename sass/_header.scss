@@ -1,4 +1,15 @@
-.selection-area div {
+.landing-header div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	@include tablet {
+		flex-direction: row;
+	}
+}
+
+.stories-header div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -8,21 +19,22 @@
 		flex-direction: row;
 	}
 
-    // img {
-		// 	width: 
-    // }
+	img {
+		height: 10rem;
+		width: auto;
+	}
 }
 
 div.dropdown-menu {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	@include tablet {
-		align-items: flex-start;
+		display: flex;
 		flex-direction: column;
+		justify-content: center;
+
+		@include tablet {
+			align-items: flex-start;
+			flex-direction: column;
+		}
 	}
-}
 
 #section-options {
 	width: 10rem;

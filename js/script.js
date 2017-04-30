@@ -1,7 +1,7 @@
 $(function () {
 
   $('#section-options').change(function (event) {
-	  event.preventDefault();
+		event.preventDefault();
 
 		var chosenSection = $('#section-options option').filter(':selected').val();
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + chosenSection + '.json';
@@ -11,7 +11,7 @@ $(function () {
 		$('.generated-stories').empty();
 
 		// Header changes
-
+		$('header').removeClass('landing-header').addClass('stories-header');
 
 		// Loading gif
 		$('.loading-gif').append('<img src="./assets/images/ajax-loader.gif" alt="loading" id="loading-gif">');
