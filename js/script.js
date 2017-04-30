@@ -1,7 +1,7 @@
 $(function () {
 
-	$('#section-options').change(function (event) {
-		event.preventDefault();
+  $('#section-options').change(function (event) {
+	  event.preventDefault();
 
 		var chosenSection = $('#section-options option').filter(':selected').val();
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + chosenSection + '.json';
@@ -29,8 +29,6 @@ $(function () {
 					storiesList.push(
 						'<li class="story">' + '<a href="' + value.url + '" target="_blank">' + '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' +  '<p>' + value.abstract + '</p>' + '</div>' + '</a>' + '</li>');
 
-					// $('.image-container').css('background-image', 'url("https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg")');
-
 				}
 			});
 			var firstTwelve = storiesList.slice(0, 12).join('');
@@ -43,5 +41,3 @@ $(function () {
 
 	});
 });
-
-						// '<li class="story">' + '<div class="image-container">' + '<img class="story-image" src="' + value.multimedia[4].url + '"/>' + '</div>' + '<p>' + value.abstract + '</p>' + '</li>');
