@@ -21,6 +21,7 @@
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
+	transition: all 1s ease;
 
 	@include tablet {
 		padding: 1rem;

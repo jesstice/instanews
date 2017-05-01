@@ -1,7 +1,5 @@
 $(function () {
-	$(function() {
-		$('select').selectric();
-	});
+	$('select').selectric();
 
   $('#section-options').change(function (event) {
 		event.preventDefault();
@@ -26,20 +24,23 @@ $(function () {
 			method: 'GET',
 			url: url,
 		}).done(function (data) {
-			$.each(data.results, function (index, value) {
-				
-				if (value.multimedia.length !== 0) {
-					storiesList.push(
-						'<li class="story">' + '<a href="' + value.url + '" target="_blank">' + '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' +  '<p>' + value.abstract + '</p>' + '</div>' + '</a>' + '</li>');
-				}
+			var filtered = data.results
+				.filter(function(el) {
+					return el.multimedia.length;
+				})
+				.slice(0, 12);
+
+			$.each(filtered, function (index, value) {
+				storiesList.push(
+					'<li class="story">' + '<a href="' + value.url + '" target="_blank">' + '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' +  '<p>' + value.abstract + '</p>' + '</div>' + '</a>' + '</li>')
 			});
-			var firstTwelve = storiesList.slice(0, 12).join('');
+
+			var firstTwelve = storiesList.join('');
 			$('.generated-stories').append(firstTwelve);
 		}).fail(function () {
 			$('.generated-stories').append('Sorry. Looks like something isn\'t working right!');
 		}).always(function () {
 			$('#loading-gif').remove();
 		});
-
 	});
 });
