@@ -45,6 +45,12 @@ a {
 	align-content: flex-end;
 	flex-direction: column-reverse;
 	list-style-type: none;
+	overflow: hidden;
+
+	&:hover p {
+			bottom: 0;
+			transition: 1s;
+		}
 
 	@include tablet {
 		width: 33.333333333%;
@@ -59,12 +65,15 @@ a {
 		margin: 0;
 		padding: 0.5rem;
 		position: absolute;
+		bottom: -100%;
 		background-color: rgba(0, 0, 0, 0.5);
 		font-size: 1.1rem;
+		transition: 1s;
 
 		@include tablet {
 			font-size: 0.9rem;
 		}
+
 	}
 
 	.image-container {
