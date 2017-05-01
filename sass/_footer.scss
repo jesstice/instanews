@@ -7,7 +7,7 @@
 	text-align: center;
 
 	@include desktop {
-		padding: 2rem;
+		padding-left: 2rem;
 		justify-content: flex-start;
 	}
 }
