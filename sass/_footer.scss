@@ -2,6 +2,12 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	color: $font-color;
+	color: #c2c2c2;
+	font-size: 0.9rem;
 	text-align: center;
+
+	@include desktop {
+		padding: 2rem;
+		justify-content: flex-start;
+	}
 }

@@ -9,6 +9,10 @@
 	@include tablet {
 		flex-direction: row;
 	}
+
+	@include desktop {
+		justify-content: flex-start;
+	}
 }
 
 .stories-header div {
@@ -24,17 +28,22 @@
 		justify-content: center;
 	}
 
+	@include desktop {
+		justify-content: flex-start;
+	}
+
 	img {
 		height: 10rem;
 		width: auto;
 
 		@include tablet {
-			height: 5rem;
+			height: 4rem;
 			padding-right: 5rem;
 		}
 
 		@include desktop {
 			height: 4rem;
+			padding-left: 1rem;
 		}
 	}
 
@@ -54,7 +63,6 @@ div.dropdown-menu {
 		justify-content: center;
 
 		@include tablet {
-			// height: 100%;
 			padding: 0;
 			align-items: flex-start;
 			flex-direction: column;
@@ -70,7 +78,7 @@ div.dropdown-menu {
 	}
 
 #section-options {
-	width: 10rem;
+	width: 7rem;
 	font-size: 1rem;
 }
 
