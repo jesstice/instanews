@@ -1,4 +1,7 @@
 $(function () {
+	$(function() {
+		$('select').selectric();
+	});
 
   $('#section-options').change(function (event) {
 		event.preventDefault();
@@ -28,7 +31,6 @@ $(function () {
 				if (value.multimedia.length !== 0) {
 					storiesList.push(
 						'<li class="story">' + '<a href="' + value.url + '" target="_blank">' + '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' +  '<p>' + value.abstract + '</p>' + '</div>' + '</a>' + '</li>');
-
 				}
 			});
 			var firstTwelve = storiesList.slice(0, 12).join('');
