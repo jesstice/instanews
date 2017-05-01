@@ -3,13 +3,14 @@
 }
 
 html {
-	font-family: 'open_sans';
+	font-family: 'open_sans',  sans-serif;
 	font-size: 16px;
 	color: $font-color;
 	line-height: 1.5;
 }
 
 body {
+	margin: 0;
 	background-color: black;
 }
 
@@ -20,11 +21,6 @@ a {
 .container {
 	width: 100%;
 }
-
-// .main-content { //necessary?
-// 	display: flex;
-// 	justify-content: center;
-// }
 
 .generated-stories {
 	padding: 0;
@@ -47,13 +43,18 @@ a {
 	list-style-type: none;
 	overflow: hidden;
 
-	&:hover p {
-			bottom: 0;
-			transition: 1s;
-		}
+	// &:hover p {
+	// 	bottom: 0;
+	// 	transition: 1s;
+	// }
 
 	@include tablet {
 		width: 33.333333333%;
+
+		&:hover p {
+			bottom: 0;
+			transition: 1s;
+		}
 	}
 
 	@include desktop {
@@ -65,15 +66,14 @@ a {
 		margin: 0;
 		padding: 0.5rem;
 		position: absolute;
-		bottom: -100%;
 		background-color: rgba(0, 0, 0, 0.5);
 		font-size: 1.1rem;
-		transition: 1s;
 
 		@include tablet {
+			bottom: -100%;
 			font-size: 0.9rem;
+			transition: 1s;
 		}
-
 	}
 
 	.image-container {
@@ -94,4 +94,3 @@ a {
 		}
 	}
 }
-
