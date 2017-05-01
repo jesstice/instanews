@@ -14,7 +14,7 @@ $(function () {
 		$('.generated-stories').empty();
 
 		// Header changes
-		$('header').removeClass('landing-header').addClass('stories-header');
+		$('div.landing-header').removeClass('landing-header').addClass('stories-header');
 
 		// Loading gif
 		$('.loading-gif').append('<img src="./assets/images/ajax-loader.gif" alt="loading" id="loading-gif">');
