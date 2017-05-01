@@ -37,6 +37,13 @@
 			height: 4rem;
 		}
 	}
+
+	.dropdown-menu p, #section-options {
+		@include tablet {
+			font-size: 0.9rem;			
+		}
+	}
+
 }
 
 div.dropdown-menu {
@@ -48,6 +55,7 @@ div.dropdown-menu {
 
 		@include tablet {
 			// height: 100%;
+			padding: 0;
 			align-items: flex-start;
 			flex-direction: column;
 			justify-content: space-around;
