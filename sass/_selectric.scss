@@ -10,10 +10,6 @@
   filter: alpha(opacity=50);
   opacity: 0.5;
   cursor: default;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 .selectric-open {
@@ -122,17 +118,15 @@
   top: 0;
   height: 30px;
   width: 30px;
-  font: 0/0 a;
   border-left: 1px solid #D2D2D2;
 }
 
 .selectric .button:after {
   content: " ";
-  zoom: 1;
   position: absolute;
   overflow: hidden;
-  top: 13px;
-  right: 12px;
+  top: 11px;
+  right: 11px;
   width: 0;
   height: 0;
   border: 4px solid transparent;
@@ -224,20 +218,12 @@
   cursor: default !important;
   background: none !important;
   color: #666 !important;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 .selectric-items .selectric-group .selectric-group-label {
   font-weight: bold;
   padding-left: 10px;
   cursor: default;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   background: none;
   color: #444;
 }
