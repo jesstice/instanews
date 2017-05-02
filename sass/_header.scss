@@ -16,14 +16,16 @@
 }
 
 .stories-header {
-	height: auto;
+	height: 20rem;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	justify-content: center;
 	text-align: center;
-	transition: all 1s ease;
+	transition: height 1s ease;
 
 	@include tablet {
+		height: 7rem;
 		padding: 1rem;
 		flex-direction: row;
 		justify-content: center;

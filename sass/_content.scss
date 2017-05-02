@@ -43,11 +43,6 @@ a {
 	list-style-type: none;
 	overflow: hidden;
 
-	// &:hover p {
-	// 	bottom: 0;
-	// 	transition: 1s;
-	// }
-
 	@include tablet {
 		width: 33.333333333%;
 
