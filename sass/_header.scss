@@ -13,6 +13,11 @@
 	@include desktop {
 		justify-content: flex-start;
 	}
+
+	img {
+		padding-left: 3rem;
+		padding-right: 3rem;	
+	}
 }
 
 .stories-header {
@@ -40,7 +45,7 @@
 		width: auto;
 
 		@include tablet {
-			height: 4rem;
+			height: 5rem;
 			padding-right: 5rem;
 		}
 

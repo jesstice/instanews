@@ -1,10 +1,15 @@
 .copyright {
+	height: 6rem;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	color: #c2c2c2;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	text-align: center;
+
+	@include tablet {
+		font-size: 0.9rem;
+	}
 
 	@include desktop {
 		padding-left: 2rem;

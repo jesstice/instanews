@@ -72,7 +72,7 @@ a {
 	}
 
 	.image-container {
-		height: 26rem;
+		height: 28rem;
 		position: relative;
 		display: flex;
 		align-items: flex-end;
@@ -81,11 +81,11 @@ a {
 		background-size: cover;
 
 		@include tablet {
-			height: 23.5rem;
+			height: 25rem;
 		}
 
 		@include desktop {
-			height: 23rem;
+			height: 25rem;
 		}
 	}
 }
