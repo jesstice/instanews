@@ -1,6 +1,6 @@
 # Project 2: Instanews
 
-![Screenshot of Instanews initial screen](assets/images/initial-screen.png?raw=true "Title")
+![Screenshot of Instanews initial screen](assets/images/initial-screen.png?raw=true "Instanews")
 
 ## Description
 This project was built using HTML, CSS and JavaScript to create a website that displays top news stories using the New York Times API. Instanews was coded with a responsive web design approach and optimized for 3 widths: mobile, min-width: 600px, and min-width 1240px.

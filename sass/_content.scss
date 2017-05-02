@@ -25,8 +25,8 @@ a {
 .generated-stories {
 	padding: 0;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 	
 	@include tablet {
 		flex-direction: row;
@@ -76,9 +76,9 @@ a {
 		position: relative;
 		display: flex;
 		align-items: flex-end;
-		overflow: hidden;
 		background-position: center;
 		background-size: cover;
+		overflow: hidden;
 
 		@include tablet {
 			height: 25rem;
