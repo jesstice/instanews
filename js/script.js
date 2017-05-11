@@ -1,3 +1,5 @@
+import '../sass/style.scss';
+
 $(function () {
 	$('select').selectric();
 
