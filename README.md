@@ -20,16 +20,9 @@ This project was built using HTML, CSS and JavaScript to create a website that d
 
 ### Developer Dependencies
 - BrowserSync (https://www.browsersync.io/)
-- GULP
-- GULP Autoprefixer
-- GULP CSS Nano
-- GULP ESLint (http://eslint.org/)
-- GULP PrettyError
-- GULP Rename
-- GULP SASS
-- GULP Uglify
+- Webpack
 
 ## Lessons Learned
 - This project allowed me to further develop my knowledge of JavaScript and jquery, while learning how to utilize Ajax and JSON. Throughout the project, I continued revisiting my code to further refine my script.js, looking for ways to make it more efficient as I gained more understanding.
 - One challenge was the implementation of the CSS. Luckily Sass was able to provide further tools to help organize my CSS in better ways, but getting the site to match the design was probably my biggest hurdle this project.
-- I found the GULP plugins to be a major time saver and helped ensure that I was catching any mistakes as they arose. I can't wait to check out the other available plugins out there!
+- I found the task runner to be a major time saver and helped ensure that I was catching any mistakes as they arose. I can't wait to check out the other available plugins out there!
