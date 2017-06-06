@@ -19,7 +19,7 @@ $(function () {
 		// Loading gif
 		$('.loading-gif').append('<img src="./assets/images/ajax-loader.gif" alt="loading image" id="loading-gif">');
 
-		var storiesList = [];
+		var storiesList = '';
 
 		// Request stories
 		$.ajax({
@@ -33,14 +33,17 @@ $(function () {
 				.slice(0, 12);
 
 			$.each(filtered, function (index, value) {
-				storiesList.push(
-					'<li class="story">' + '<a href="' + value.url + '" target="_blank">' + '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' +  '<p>' + value.abstract + '</p>' + '</div>' + '</a>' + '</li>')
+				storiesList +=
+					'<li class="story">' 
+						+ '<a href="' + value.url + '" target="_blank">' 
+						+ '<div style="background-image: url(\'' + value.multimedia[4].url + '\')" class="image-container">' 
+						+ '<p>' + value.abstract + '</p>' 
+					+ '</div>' + '</a>' + '</li>';
 			});
 
-			var firstTwelve = storiesList.join('');
-			$('.generated-stories').append(firstTwelve);
+			$('.generated-stories').append(storiesList);
 		}).fail(function () {
-			$('.generated-stories').append('Sorry. Looks like something isn\'t working right!');
+			$('.generated-stories').append('Sorry. Looks like something isn\'t working right. Try again!');
 		}).always(function () {
 			$('#loading-gif').remove();
 		});
